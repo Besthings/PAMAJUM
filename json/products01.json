@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "name": "Labubu 1",
+      "description01": "Labubu is so expensive.",
+      "price": 400,
+      "image": "../MYWEB/img/image-removebg-preview.png",
+      "color": "#ffcc00"
+    },
+    {
+      "id": 2,
+      "name": "Labubu 2",
+      "description01": "This is Labubu 2.",
+      "price": 500,
+      "image": "../MYWEB/img/crybabysun.png",
+      "color": "#87CEEB"
+    },
+    {
+      "id": 3,
+      "name": "Labubu 3",
+      "description01": "This is Labubu 3.",
+      "price": 600,
+      "image": "../MYWEB/img/image-removebg-preview (1).png",
+      "color": "#FF69B4"
+    }
+  ]
+  

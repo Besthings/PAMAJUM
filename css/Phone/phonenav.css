@@ -1,0 +1,292 @@
+.menu-toggle {
+    display: none; /* ซ่อนปุ่ม hamburger ในหน้าจอขนาดใหญ่ */
+    font-size: 20px; /* ขนาดของ icon */
+    cursor: pointer; /* ให้ cursor เป็น pointer */
+}
+
+/* ซ่อนเมนูในหน้าจอขนาดใหญ่ */
+.navl-toggle {
+    display: none; /* ซ่อนเมนูในขนาดหน้าจอปกติ */
+}
+
+.hamburger{
+    display: none !important;
+    padding: 0 !important;
+}
+
+.hamburger-inner {
+    width: 35px !important; /* Match the box width */
+    background-color: #333; /* Change color if needed */
+}
+
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+    width: 35px !important;
+}
+
+
+
+
+/* General styles for smaller screens */
+@media (max-width: 768px) {
+
+    .hamburger{
+        display: inline-block !important;
+    }
+
+    .navl{
+        display: none;
+    }
+
+    .container-me {
+        display: flex;
+        width: 100%;
+        height: 70px;
+        flex-direction: row;
+        padding: 0 1rem;
+        justify-content: space-between;
+    }
+
+    .cart{
+        margin-left: 0;
+    }
+
+    /* แสดงปุ่ม hamburger */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* เมนู hamburger */
+    .navl-toggle {
+        list-style: none;
+        display: flex; /* ตั้งค่าให้เป็น flex */
+        flex-direction: column; /* เปลี่ยนให้เป็นแนวตั้ง */
+        width: 100%;
+        background-color: #eeeeee; /* สีพื้นหลัง */
+        position: absolute;
+        top: 70px; /* ปรับให้แสดงอยู่ด้านล่าง */
+        z-index: 1000; /* ให้อยู่บนสุด */
+        color: black;
+        max-height: 0; /* เริ่มต้นที่ 0 */
+        overflow: hidden;
+        transition: max-height 0.5s ease-out; /* เพิ่ม transition */
+        transition: 0.5s;
+        padding: 0 1rem;
+    }
+
+    /* เมื่อเมนูถูกเปิด */
+    .navl-toggle.active {
+        max-height: 400px !important; /* ค่า max-height ที่เพียงพอในการแสดงทั้งหมด */
+        padding: 1rem;
+    }
+
+    /* ระยะห่างระหว่างเมนู */
+    .navl-toggle li {
+        margin: 0.1rem 0; /* เพิ่มระยะห่างระหว่างเมนู */
+        padding: 0.5rem 0.1rem;
+        transition: 0.5s;
+        border-bottom: 1px solid gray;
+    }
+
+    /* เมนูเมาส์ชี้ */
+    .navl-toggle li:hover {
+        background-color: rgba(255, 165, 91, 0.651);
+        transition: 0.5s;
+        border-radius: 0.2rem;
+    }
+
+
+    .dropdown-togglel {
+        /* border: 1px solid red; */
+        display: block;
+        text-decoration: none;
+        color: black;
+    }
+
+    .dropdown-menull {
+        display: none; /* ซ่อนเมนู dropdown */
+        position: absolute; /* ให้ dropdown แสดงอยู่เหนือรายการ */
+        top: -0.5rem; /* อยู่ที่ด้านล่างของเมนูหลัก */
+        left: 8rem; /* ชิดซ้าย */
+        background-color: #f0f0f0; /* สีพื้นหลัง */
+        z-index: 1001; /* ให้อยู่เหนือเมนูหลัก */
+        width: 100px; /* ให้ dropdown ครอบคลุมความกว้างของเมนูหลัก */
+    }
+
+    .dropdown-menull a{
+        display: block;
+        list-style: none;
+        text-decoration: none;
+        color: black;
+        padding: 0.35rem;
+        /* border: 1px solid red; */
+    }
+
+    .dropdown-menull a:hover {
+        opacity: 0.8;
+    }
+
+
+
+    .cart img{
+        width: 35px !important;
+        margin: 0 1rem;
+    }
+
+    .sign{
+        display: none;
+    }
+
+    .login{
+        display: none;
+    }
+
+    .cartcount {
+        width: 20px;
+        height: 20px;
+        top: -5px !important;
+        right: 8px !important;
+        font-size: 12px;
+        /* border: 1px solid red; */
+    }
+
+    .w1-3k{
+        width: 100%;
+        margin: 0 auto;
+        /* border: 1px solid red; */
+    }
+
+    .w1-3k h1{
+        color: rgb(255, 104, 129);
+        text-align: center;
+        position: relative;
+        margin: 0.5rem auto;
+        border-bottom: 2px solid rgb(180, 180, 180);
+        padding: 1rem;
+        width: calc(100% - 2rem);
+        
+    }
+}
+
+/* Ipad */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .navl{
+        display: none;
+    }
+
+    .hamburger{
+        display: inline-block !important;
+    }
+
+    .container-me {
+        display: flex;
+        width: 100%;
+        height: 70px;
+        flex-direction: row;
+        padding: 0 1rem;
+        justify-content: space-between;
+    }
+
+    /* แสดงปุ่ม hamburger */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* เมนู hamburger */
+    .navl-toggle {
+        list-style: none;
+        display: flex; /* ตั้งค่าให้เป็น flex */
+        flex-direction: column; /* เปลี่ยนให้เป็นแนวตั้ง */
+        width: 100%;
+        background-color: #eeeeee; /* สีพื้นหลัง */
+        position: absolute;
+        top: 70px; /* ปรับให้แสดงอยู่ด้านล่าง */
+        z-index: 1000; /* ให้อยู่บนสุด */
+        color: black;
+        max-height: 0; /* เริ่มต้นที่ 0 */
+        overflow: hidden;
+        transition: max-height 0.5s ease-out; /* เพิ่ม transition */
+        transition: 0.5s;
+        padding: 0 1rem;
+    }
+
+    /* เมื่อเมนูถูกเปิด */
+    .navl-toggle.active {
+        max-height: 400px !important; /* ค่า max-height ที่เพียงพอในการแสดงทั้งหมด */
+        padding: 1rem;
+    }
+
+    /* ระยะห่างระหว่างเมนู */
+    .navl-toggle li {
+        margin: 1rem 0; /* เพิ่มระยะห่างระหว่างเมนู */
+        padding: 0.2rem 0.1rem;
+        transition: 0.5s;
+        border-bottom: 1px solid gray;
+    }
+
+    /* เมนูเมาส์ชี้ */
+    .navl-toggle li:hover {
+        background-color: rgba(255, 165, 91, 0.651);
+        transition: 0.5s;
+        border-radius: 0.2rem;
+    }
+
+
+    .dropdown-togglel {
+        /* border: 1px solid red; */
+        display: block;
+        text-decoration: none;
+        color: black;
+    }
+
+    .dropdown-menull {
+        display: none; /* ซ่อนเมนู dropdown */
+        position: absolute; /* ให้ dropdown แสดงอยู่เหนือรายการ */
+        top: -0.5rem; /* อยู่ที่ด้านล่างของเมนูหลัก */
+        left: 8rem; /* ชิดซ้าย */
+        background-color: #f0f0f0; /* สีพื้นหลัง */
+        z-index: 1001; /* ให้อยู่เหนือเมนูหลัก */
+        width: 100px; /* ให้ dropdown ครอบคลุมความกว้างของเมนูหลัก */
+    }
+
+    .dropdown-menull a{
+        display: block;
+        list-style: none;
+        text-decoration: none;
+        color: black;
+        padding: 0.35rem;
+        /* border: 1px solid red; */
+    }
+
+    .dropdown-menull a:hover {
+        opacity: 0.8;
+    }
+
+
+
+    .cart img{
+        width: 35px !important;
+        margin: 0 1rem;
+    }
+
+    .drop-btni{
+        width: 40px !important;
+    }
+
+    .sign{
+        display: none;
+    }
+
+    .login{
+        display: none;
+    }
+
+    .cartcount {
+        width: 20px;
+        height: 20px;
+        top: -5px !important;
+        right: 8px !important;
+        font-size: 12px;
+        /* border: 1px solid red; */
+    }
+
+}

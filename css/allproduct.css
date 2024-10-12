@@ -1,0 +1,65 @@
+.w1-3k{
+    width: 1200px;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+}
+
+
+.w1-3k h1{
+    color: rgb(255, 104, 129);
+    text-align: center;
+    position: relative;
+    margin: 0.5rem auto;
+    border-bottom: 2px solid rgb(180, 180, 180);
+    padding: 1rem;
+    width: 1200px;
+    /* border: 1px solid red; */
+}
+
+.sec-nav{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    /* border: 1px solid red; */
+}
+
+.sec-nav button{
+    outline: none;
+    border: none;
+    width: 120px;
+    padding: 0.2rem;
+    border-radius: 0.8rem;
+    /* border: 1px solid red; */
+
+}
+
+.sec-nav input{
+    border-radius: 1rem;
+    outline: none;
+    border: 1px solid gray;
+    width: 250px;
+    padding: 0.2rem 1rem;
+    margin-bottom: 2rem;
+    /* border: 1px solid red; */
+
+}
+
+.fa{
+    font-size: 20px;
+    color: rgb(46, 46, 46);
+}
+
+#filter-buttons button{
+    transition: 0.3s;
+}
+
+#filter-buttons button:hover{
+    opacity: 0.8;
+    transition: 0.3s;
+
+}
+
+#filter-buttons button.active {
+    background-color: #b693f7; /* สีพื้นหลังเมื่อ active */
+    color: white; /* สีตัวอักษรเมื่อ active */
+  }

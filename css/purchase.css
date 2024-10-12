@@ -1,0 +1,28 @@
+.container{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+}
+
+.row1{
+    /* border: 1px solid red; */
+    display: block;
+}
+
+.card{
+    
+    width: 1300px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.card img{
+    width: 220px;
+}
+
+.buy-clear{
+    text-align: end;
+}
+
