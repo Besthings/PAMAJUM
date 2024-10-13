@@ -1,8 +1,4 @@
-.menu-toggle {
-    display: none; /* ซ่อนปุ่ม hamburger ในหน้าจอขนาดใหญ่ */
-    font-size: 20px; /* ขนาดของ icon */
-    cursor: pointer; /* ให้ cursor เป็น pointer */
-}
+
 
 /* ซ่อนเมนูในหน้าจอขนาดใหญ่ */
 .navl-toggle {
@@ -26,6 +22,12 @@
 
 /* General styles for smaller screens */
 @media (max-width: 768px) {
+
+    .menu-toggle {
+        display: none; /* ซ่อนปุ่ม hamburger ในหน้าจอขนาดใหญ่ */
+        font-size: 20px; /* ขนาดของ icon */
+        cursor: pointer; /* ให้ cursor เป็น pointer */
+    }
 
     header {
         display: flex;
