@@ -24,15 +24,12 @@
 }
 
 
-
-
 /* General styles for smaller screens */
 @media (max-width: 768px) {
 
     header {
         display: flex;
         align-items: center;
-        /* border: 1px solid red; */
     }
 
     .hamburger{
