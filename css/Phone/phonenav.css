@@ -32,6 +32,10 @@
         align-items: center;
     }
 
+    section{
+        margin-top: 4rem;
+    }
+
     .hamburger{
         display: inline-block !important;
     }
