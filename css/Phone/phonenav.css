@@ -32,7 +32,7 @@
     header {
         display: flex;
         align-items: center;
-        border: 1px solid red;
+        /* border: 1px solid red; */
     }
 
     .hamburger{
@@ -50,6 +50,8 @@
         flex-direction: row;
         padding: 0 1rem;
         justify-content: space-between;
+        /* margin-bottom: 2rem; */
+        
     }
 
     .cart{
