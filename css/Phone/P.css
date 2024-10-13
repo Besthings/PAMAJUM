@@ -1,5 +1,10 @@
 /* General styles for smaller screens */
 @media (max-width: 767px) {
+
+    .bg-img{
+        background-position: none;
+    }
+
     .sec-container {
         width: 100%;
         flex-direction: column;
