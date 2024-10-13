@@ -212,7 +212,7 @@
 } 
 
 @media (min-width: 891px) and (max-width: 1024px){
-    .grid-recommend{
+        .grid-recommend{
         /* border: 1px solid red; */
         grid-template-columns: 1fr 1fr 1fr;
         column-gap: 2rem;
