@@ -29,6 +29,11 @@
 /* General styles for smaller screens */
 @media (max-width: 768px) {
 
+    header{
+        z-index: 999;
+        display: block;
+    }
+
     .hamburger{
         display: inline-block !important;
     }

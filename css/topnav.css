@@ -25,6 +25,7 @@ body{
 
 header {
     position: sticky;
+    display: block;
     width: 100%;
     z-index: 1;
     background-color: #fff7f0;
