@@ -1,5 +1,3 @@
-
-
 /* ซ่อนเมนูในหน้าจอขนาดใหญ่ */
 .navl-toggle {
     display: none; /* ซ่อนเมนูในขนาดหน้าจอปกติ */
@@ -35,7 +33,7 @@
     }
 
     section{
-        /* margin-top: 3rem; */
+        margin-top: 3rem;
     }
 
     .hamburger{
@@ -190,7 +188,7 @@
     }
 
     section{
-        /* margin-top: 3rem !important; */
+        margin-top: 3rem !important;
         /* border: 1px solid red; */
     }
 
