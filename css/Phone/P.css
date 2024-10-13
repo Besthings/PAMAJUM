@@ -35,14 +35,20 @@
         max-width: 350px;
     }
 
+    .about {
+        margin-top: 2rem;
+    }
+
     .about-bg1, .about-bg3 {
         display: flex;
         flex-direction: column-reverse;
+        position: relative;
     }
 
     .about-bg2 {
         display: flex;
         flex-direction: column;
+        position: relative;
     }
 
     .about-bg1 img{
@@ -50,41 +56,37 @@
         height: 250px !important;
         object-fit: cover;
         position: absolute;
-        left: -1.5rem;
-        bottom: -3rem;
+        top: -1rem;
         filter: drop-shadow(-5px 8px 6px gray) !important;
     }
 
     .about-bg1 .about-flex {
-        /* border: 1px solid red; */
         padding: 1rem;
-        height: 40%;
+        height: 20%;
         width: 80%;
-        position: absolute;
         margin-top: 0.5rem;
-        top: 3rem;
-        right: -1rem;
+        bottom: 6rem;
+        left: 5rem;
+        position: absolute;
     }
 
     .about-bg2 img{
         width: 300px !important;
         height: 300px !important;
         object-fit: cover;
-        position: absolute;
+        top: 4rem;
         right: 0rem;
-        bottom: -10rem;
         z-index: 10;
+        position: absolute;
     }
 
     .about-bg2 .about-flex {
-        /* border: 1px solid red; */
         padding: 1rem;
         height: 30%;
         width: 90%;
-        position: absolute;
         margin-top: 0.5rem;
-        top: 3rem;
-        left: 0rem;
+        position: absolute;
+        bottom: 5rem;
     }
 
     .about-bg3 img{
@@ -92,28 +94,26 @@
         height: 250px !important;
         object-fit: cover;
         position: absolute;
-        left: -3rem;
-        bottom: -3rem;
+        top: -1.5rem;
+        left: -2rem;
     }
 
     .about-bg3 .about-flex {
-        /* border: 1px solid red; */
         padding: 1rem;
         height: 40%;
-        width: 75%;
+        width: 70%;
         position: absolute;
         margin-top: 0.5rem;
-        top: 3rem;
+        bottom: 5.5rem;
         right: -1rem;
     }
 
     .about-flex h2{
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .about-flex p{
-        /* border: 1px solid red; */
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .category-content {
@@ -138,7 +138,7 @@
         /* border: 1px solid red; */
         grid-template-columns: 1fr 1fr ;
         row-gap: 25px;
-        column-gap: 0px;
+        column-gap: 25px;
     }
     .grid-recommend img{
         display: block;
