@@ -1,5 +1,16 @@
-/* Media Query สำหรับ iPad ในแนวตั้ง (Portrait) */
-@media (min-width: 768px) and (max-width: 890px) {
+/* Combined Media Queries for iPad and similar devices */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+     /* General container settings */
+     .container-me {
+        display: flex;
+        width: 100%;
+        height: 70px;
+        flex-direction: row;
+        padding: 0 1rem;
+        justify-content: space-between;
+    }
+
     .sec-container {
         width: 100%;
         flex-direction: column;
@@ -9,11 +20,10 @@
     .sec-left-container, .sec-right-container {
         width: 100%;
         margin: 0;
-        /* border: 1px solid red; */
     }
 
-    .sec-left-container h1,h2,p {
-        margin: 0 1rem 0 1rem;
+    .sec-left-container h1, .sec-left-container h2, .sec-left-container p {
+        margin: 0 1rem;
     }
 
     .sec-left-container h1, .sec-left-container h2 {
@@ -35,7 +45,7 @@
         max-width: 420px;
     }
 
-    .about{
+    .about {
         margin-top: 2rem;
     }
 
@@ -43,7 +53,6 @@
         display: flex;
         flex-direction: column-reverse;
         position: relative;
-
     }
 
     .about-bg2 {
@@ -52,7 +61,7 @@
         position: relative;
     }
 
-    .about-bg1 img{
+    .about-bg1 img {
         width: 300px !important;
         height: 300px !important;
         object-fit: cover;
@@ -72,7 +81,7 @@
         right: -1rem;
     }
 
-    .about-bg2 img{
+    .about-bg2 img {
         width: 400px !important;
         height: 400px !important;
         object-fit: cover;
@@ -92,7 +101,7 @@
         left: 0rem;
     }
 
-    .about-bg3 img{
+    .about-bg3 img {
         width: 350px !important;
         height: 350px !important;
         object-fit: cover;
@@ -111,11 +120,11 @@
         right: -1rem;
     }
 
-    .about-flex h2{
+    .about-flex h2 {
         font-size: 22px;
     }
 
-    .about-flex p{
+    .about-flex p {
         font-size: 18px;
     }
 
@@ -136,69 +145,62 @@
         font-size: 24px;
     }
 
-
-    .grid-recommend{
-    /* border: 1px solid red; */
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 2rem;
-    row-gap: 2rem;
-    margin: 0 3rem;
+    .grid-recommend {
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 2rem;
+        row-gap: 2rem;
+        margin: 0 3rem;
     }
 
-    .grid-recommend img{
+    .grid-recommend img {
         display: block;
         width: 180px !important;
         height: 180px !important;
-        /* border: 1px solid red; */
         border-radius: 1rem;
         transition: 0.5s;
         align-items: center;
         margin: 0 auto;
         object-fit: cover;
     }
-    .box{
+
+    .box {
         max-width: 220px;
         width: 100%;
         height: 100%;
         border: 1px solid rgba(78, 78, 78, 0.247);
     }
 
-    .sec-nav{
+    .sec-nav {
         display: flex;
         flex-direction: row;
         margin-bottom: 1rem;
         width: 90%;
         margin: 0 auto;
-        /* border: 1px solid red; */
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
-    #filter-buttons{
-        /* border: 1px solid red; */
-        /* display: flex; */
+    #filter-buttons {
         justify-content: center;
     }
 
-    .sec-nav button{
+    .sec-nav button {
         width: 80px;
         text-align: center;
         margin: 0 3px;
         height: 100%;
         max-height: 35px;
-        /* border: 1px solid red; */
     }
 
-    .sec-nav input{
+    .sec-nav input {
         width: 100%;
-    }  
+    }
 
-    .w1-3k{
+    .w1-3k {
         width: 100%;
         margin: 0 auto;
-        /* border: 1px solid red; */
     }
 
-    .w1-3k h1{
+    .w1-3k h1 {
         color: rgb(255, 104, 129);
         text-align: center;
         position: relative;
@@ -206,64 +208,77 @@
         border-bottom: 2px solid rgb(180, 180, 180);
         padding: 1rem;
         width: calc(100% - 2rem);
-        
     }
 
-} 
+    .menu-toggle {
+        display: block; /* แสดงปุ่ม hamburger */
+        cursor: pointer;
+        z-index: 1001; /* ให้อยู่เหนือเมนูหลัก */
+    }
 
-/* ipad pro */
-@media (min-width: 891px) and (max-width: 1024px){
-        .grid-recommend{
-        /* border: 1px solid red; */
-        grid-template-columns: 1fr 1fr 1fr;
-        column-gap: 2rem;
-        row-gap: 2rem;
-        margin: 0 3rem;
-        }
+    .navl {
+        display: none; /* ซ่อนเมนูหลักเมื่อมี hamburger */
+    }
 
-        .w1-3k{
-            width: 100%;
-            margin: 0 auto;
-            /* border: 1px solid red; */
-        }
-    
-        .w1-3k h1{
-            color: rgb(255, 104, 129);
-            text-align: center;
-            position: relative;
-            margin: 0.5rem auto;
-            border-bottom: 2px solid rgb(180, 180, 180);
-            padding: 1rem;
-            width: calc(100% - 2rem);
-            
-        }
+    .hamburger {
+        display: inline-block !important;
+    }
 
-        .sec-nav{
-            display: flex;
-            flex-direction: row;
-            margin-bottom: 1rem;
-            width: 90%;
-            margin: 0 auto;
-            /* border: 1px solid red; */
-            justify-content: space-between;
-        }
-    
-        #filter-buttons{
-            /* border: 1px solid red; */
-            /* display: flex; */
-            justify-content: center;
-        }
-    
-        .sec-nav button{
-            width: 80px;
-            text-align: center;
-            margin: 0 3px;
-            height: 100%;
-            max-height: 35px;
-            /* border: 1px solid red; */
-        }
-    
-        .sec-nav input{
-            width: 100%;
-        }  
+
+    .navl-toggle.active {
+        max-height: 400px !important;
+        padding: 1rem;
+    }
+
+    .navl-toggle li {
+        margin: 1rem 0;
+        padding: 0.2rem 0.1rem;
+        transition: 0.5s;
+        border-bottom: 1px solid gray;
+    }
+
+    .navl-toggle li:hover {
+        background-color: rgba(255, 165, 91, 0.651);
+        transition: 0.5s;
+        border-radius: 0.2rem;
+    }
+
+    .dropdown-menu {
+        margin-top: 3rem !important;
+    }
+
+    .dropdown-menull {
+        display: none;
+        position: absolute;
+        top: -0.5rem;
+        left: 8rem;
+        background-color: #f0f0f0;
+        z-index: 1001;
+        width: 100px;
+    }
+
+    .dropdown-menull a {
+        display: block;
+        list-style: none;
+        text-decoration: none;
+        color: black;
+        padding: 0.35rem;
+    }
+
+    .dropdown-menull a:hover {
+        opacity: 0.8;
+    }
+
+    .cart img {
+        width: 35px !important;
+        margin: 0 1rem;
+    }
+
+    .cartcount {
+        width: 20px;
+        height: 20px;
+        top: -5px !important;
+        right: 8px !important;
+        font-size: 12px;
+    }
 }
