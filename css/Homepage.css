@@ -8,6 +8,9 @@
     width: 100%;
 }
 
+section{
+    display: flex;
+}
 
 .sec-container{
     width: 1600px;
