@@ -103,13 +103,10 @@
         border-radius: 0.2rem;
     }
 
-    .nav-link{
-        position: relative !important;
-    }
 
-    /* .dropdown-menu{
-        margin-top: 2rem !important;
-    } */
+    .dropdown-menu{
+        margin-top: 3rem !important;
+    }
 
 
     .dropdown-togglel {
