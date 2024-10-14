@@ -2,15 +2,18 @@
     display: flex;
     margin: 0 auto;
     /* border: 1px solid .red; */
-    width: 1300px;
+    max-width: 1300px;
+    width: 100%;
 }
 
 .productDetails img{
-    position: ab;
-    width: 500px;
+    max-width: 500px;
+    width: 100%;
+    max-height: auto;
+    height: 100%;
     /* border: 1px solid red; */
     padding: 1rem;
-    background-color: antiquewhite;
+    background-color: rgb(255, 255, 255);
     margin: 2rem 2rem;
     box-shadow: 0 0 10px gray;
 }
@@ -36,10 +39,10 @@
     border: none;
     padding: 10px;
     width: 300px;
-    margin: 1rem 0;
     background-color: rgb(133, 243, 133);
     font-size: 22px;
     border-radius: 1rem;
+    margin-top: 1rem;
     box-shadow: 3px 3px 10px gray;
     transition: 0.5s;
 }
@@ -48,7 +51,6 @@
     filter: brightness(1.1);
     box-shadow: 3px 3px 20px gray;
 }
-
 
 
 .data .favor{

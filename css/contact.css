@@ -1,0 +1,333 @@
+/* Container for main content */
+.background{
+    background-image: url(https://img.freepik.com/free-vector/modern-abstract-white-minimal-background_84443-8364.jpg?w=1380&t=st=1728932602~exp=1728933202~hmac=8cad32b525ee6aeb5d49be0f60e761188cfd65068ae756d50f988e21b4614743);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.size{
+    margin-top: 0;
+}
+
+.kum-tact{
+    width: 1300px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* .header-tact styling */
+.header-tact {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 2rem;
+}
+
+.header-tact h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.header-tact p {
+    font-size: 18px;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Content layout */
+.content {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 60px;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+/* Form styling */
+.form-container {
+    display: grid;
+    gap: 20px;
+}
+
+.form-group {
+    grid-column: span 2;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    color: #aaa;
+}
+
+textarea {
+    resize: none;
+    height: 120px;
+}
+
+/* Phone input styling */
+.phone-input {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+}
+
+/* Services section */
+.services {
+    margin-top: 20px;
+}
+
+.services-options {
+    display: flex;
+    flex-wrap: wrap; /* ทำให้ช่อง checkbox มีการจัดเรียงแบบหลายแถว */
+    /* gap: 20px; ระยะห่างระหว่างช่อง checkbox */
+}
+
+.services-options .form-group-box {
+    margin-top: 1rem;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: left;
+}
+
+.form-group-box input[type="checkbox"]{
+    border: 1px solid red;
+    width: 50px;
+}
+
+label {
+    margin-left: 5px;
+}
+
+.services label {
+    font-size: 14px;
+}
+
+.kum-tact button {
+    grid-column: span 2;
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    width:100%;
+    margin: 15px;
+    margin-top: 2rem;
+}
+
+.kum-tact button:hover {
+    background-color: #555;
+}
+
+.kum-tact button:focus {
+    outline: 2px dashed #007acc;
+    outline-offset: 4px;
+}
+
+/* Contact information styling */
+.contact-info {
+    flex: 1;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.info-section {
+    margin-bottom: 30px;
+}
+
+.info-section h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.info-section p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.phone-number {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.info-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-section ul li {
+    margin-bottom: 10px;
+}
+
+.info-section ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.info-section ul li a:hover {
+    text-decoration: underline;
+}
+
+address {
+    font-style: normal;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Contact section styling */
+.contact-container {
+    padding: 40px;
+}
+
+.contact-.header-tact {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-.header-tact h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.contact-.header-tact p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.contact-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* เพิ่มขนาด minmax เป็น 200px เพื่อให้ช่องว่างเล็กลง */
+    gap: 10px; /* ลด gap ให้เล็กลงจาก 15px เป็น 10px */
+}
+.contact-item {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 0.9em;
+    max-height: 250px; 
+    margin: 0 auto;
+    height: auto; 
+    width: 100%;
+    max-width: 280px;
+}
+
+.contact-item h3 {
+    font-size: 1.25em;
+    margin-bottom: 5px;
+}
+
+.contact-item p {
+    margin: 5px 0;
+}
+
+.contact-item a {
+    color: #007acc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+.contact-item i {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.phone-number {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .contact-item {
+        width: 90%;
+        max-width: none;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-tact h1 {
+        font-size: 28px;
+    }
+
+    .header-tact p {
+        font-size: 16px;
+    }
+
+    .form-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-item {
+        padding: 15px;
+    }
+}
+
+
+
+.form-row {
+    display: flex; /* จัดให้อยู่ในแถวเดียวกัน */
+    justify-content: space-between; /* กระจายฟิลด์ให้มีระยะห่างเท่ากัน */
+    gap: 20px; /* ระยะห่างระหว่างฟิลด์ */
+    margin-bottom: 20px; /* เพิ่มระยะห่างด้านล่างฟอร์ม */
+}
+
+.form-group {
+    flex: 1; /* ให้ฟิลด์ขยายเต็มที่และมีขนาดเท่ากัน */
+}
+
+
+.form-group input {
+    width: 100%; /* ให้ input ขยายเต็มฟิลด์ */
+    padding: 10px; /* เพิ่ม padding ให้ฟิลด์ */
+    box-sizing: border-box; /* ทำให้ padding ถูกนับรวมในขนาดของกล่อง */
+    
+}
+
+.form-group label {
+    display: block; /* ให้ label อยู่ด้านบนของ input */
+    margin-bottom: 5px; /* เพิ่มระยะห่างระหว่าง label กับ input */
+}
+

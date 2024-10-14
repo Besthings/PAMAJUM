@@ -28,8 +28,9 @@ header {
     display: block;
     width: 100%;
     z-index: 1;
-    background-color: #fff7f0;
+    background-color: #ffffff;
     transition: top 0.5s ease-in-out; /* การเปลี่ยนแปลงสมูท */
+    box-shadow: 0 0 10px gray;
     /* border: 1px solid red; */
 }
 
@@ -43,10 +44,11 @@ header {
 }
 
 .logo a{
-    color: rgb(121, 152, 255);
+    color: rgb(255, 153, 106);
     text-decoration: none;
     transition: ease-in-out 0.3s;
     font-weight: 800;
+    /* -webkit-text-stroke: 2px gray; */
 }
 
 .logo a:hover{

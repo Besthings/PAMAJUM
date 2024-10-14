@@ -18,8 +18,10 @@ fetch('./json/products.json')
             <h2>${product.name}</h2>
             <p><strong>Price: ฿${product.price}</strong></p>
             <p>${product.description02}</p>
-            <button onclick="openModal(${product.id})" class="buy">Buy</button><br>
-            <button class="favor">favorite</button>
+            <div class="button-data">
+              <button onclick="openModal(${product.id})" class="buy">Buy</button><br>
+              <button class="favor">favorite</button>
+            </div>
         </div>
       `;
     } else {

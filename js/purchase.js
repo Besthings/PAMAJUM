@@ -1,197 +1,202 @@
-// ฟังก์ชันสำหรับเคลียร์สินค้าทั้งหมดในตะกร้า
-function clearCart() {
-  let cartItems = JSON.parse(localStorage.getItem('cartItems')) || {};
-
-  // ตรวจสอบว่ามีสินค้าหรือไม่
-  if (Object.keys(cartItems).length === 0) {
-    Swal.fire({
-      title: 'Cart is Empty!',
-      text: 'There are no items in your cart to clear.',
-      icon: 'warning',
-      confirmButtonText: 'OK'
-    });
-    return; // หยุดการทำงานของฟังก์ชัน
-  }
-
-  // ลบข้อมูลสินค้าทั้งหมดใน localStorage
-  localStorage.removeItem('cartItems');
-  localStorage.removeItem('purchasedItems');
-
-  // ลบการแสดงผลสินค้าในหน้าเว็บ
-  const cartItemsContainer = document.getElementById('cart-items');
-  cartItemsContainer.innerHTML = '';
-
-  // แสดงข้อความสำเร็จ
-  Swal.fire({
-    title: 'Cart Cleared!',
-    text: 'All items have been removed from your cart.',
-    icon: 'success',
-    confirmButtonText: 'OK'
-  });
-
-  // อัปเดตจำนวนสินค้าในตะกร้า
-  updateCartCount();
-}
-
-
-// ฟังก์ชันอัปเดตจำนวนสินค้าในตะกร้า (navbar)
-function updateCartCount() {
-  let cartItems = JSON.parse(localStorage.getItem('cartItems')) || {};
-  const totalItems = Object.values(cartItems).reduce((total, qty) => total + qty, 0);
-  document.querySelector('.cartcount').textContent = totalItems;
-}
-
-// ฟังก์ชันสำหรับแสดงสินค้าที่อยู่ในตะกร้า
 document.addEventListener('DOMContentLoaded', function() {
-  const cartItemsContainer = document.getElementById('cart-items');
-  const cartItemsCounts = JSON.parse(localStorage.getItem('cartItems')) || {}; // ดึงข้อมูลจาก localStorage
+    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || {};
+    const purchaseItemsContainer = document.getElementById('purchase-items');
+    let totalPrice = 0;
+    let totalQuantity = 0;
 
-  // ตรวจสอบว่ามีสินค้าในตะกร้าหรือไม่
-  if (Object.keys(cartItemsCounts).length > 0) {
+    // Fetch product data
     fetch('./json/products.json')
       .then(response => response.json())
       .then(data => {
-        // ดึงสินค้าที่ตรงกับในตะกร้า
-        const cartItems = data.filter(item => item.id in cartItemsCounts);
+        // ดึงสินค้าที่อยู่ในตะกร้า
+        const cartProducts = data.filter(product => product.id in cartItems);
 
-        cartItems.forEach(item => {
+        // ตรวจสอบว่ามีสินค้าในตะกร้าหรือไม่
+        if (cartProducts.length === 0) {
+          // แสดงข้อความไม่มีสินค้าตอนนี้
+          purchaseItemsContainer.innerHTML = '<p style="color: rgb(247, 71, 71);">ไม่มีสินค้าตอนนี้</p>';
+        }
+
+        // แสดงสินค้า
+        cartProducts.forEach(product => {
+          const itemQuantity = cartItems[product.id];
+          totalPrice += product.price * itemQuantity;
+          totalQuantity += itemQuantity;
+
           const itemElement = document.createElement('div');
-          itemElement.classList.add('col-md-3');
+          itemElement.classList.add('card');
+          itemElement.style.display = 'flex';
+          itemElement.style.justifyContent = 'space-between';
+          itemElement.style.alignItems = 'center';
+          itemElement.style.marginBottom = '15px';
 
           itemElement.innerHTML = `
-            <div class="card">
-              <img src="${item.image}" class="card-img-top" alt="${item.name}">
-              <div class="card-body">
-                <h5 class="card-title">${item.name}</h5>
-                <p class="card-text">${item.description01}</p>
-                <p class="card-text"><span>฿${item.price}</span></p>
-                <p class="card-text">
-                  Quantity: <span id="quantity-${item.id}">${cartItemsCounts[item.id]}</span>
-                </p>
-                <button class="btn btn-primary" onclick="changeQuantity('${item.id}', 1)">Increase</button>
-                <button class="btn btn-danger" onclick="changeQuantity('${item.id}', -1)">Decrease</button>
-                <button class="btn btn-warning" onclick="removeItem('${item.id}')">Remove</button>
-              </div>
+            <img src="${product.image}" class="card-img-top" alt="${product.name}" style="width: 80px; height: 80px;">
+            <div class="card-body">
+              <h5 class="card-title">${product.name}</h5>
+              <p class="card-text">Price: ฿${product.price}</p>
+            </div>
+            <div class="quantity-control">
+              <button onclick="changeQuantity('${product.id}', -1)" class="btn btn-secondary">&lt;</button>
+              <span id="quantity-${product.id}">${itemQuantity}</span>
+              <button onclick="changeQuantity('${product.id}', 1)" class="btn btn-secondary">&gt;</button>
             </div>
           `;
-
-          cartItemsContainer.appendChild(itemElement);
+          purchaseItemsContainer.appendChild(itemElement);
         });
+
+        // แสดงราคารวม
+        document.getElementById('total-price').textContent = `฿${totalPrice}`;
+        // แสดงจำนวนสินค้าทั้งหมด
+        document.getElementById('total-quantity').textContent = `สินค้าทั้งหมด: ${totalQuantity} ชิ้น`;
       })
       .catch(error => console.error('Error loading products:', error));
-  } else {
-    cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
-  }
+  });
 
-  // อัปเดตจำนวนสินค้าในตะกร้าบน navbar
-  updateCartCount();
-});
+  // ฟังก์ชันสำหรับเปลี่ยนจำนวนสินค้า
+  function changeQuantity(itemId, change) {
+    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || {};
 
-// ฟังก์ชันสำหรับเพิ่ม-ลดจำนวนสินค้า
-function changeQuantity(itemId, change) {
-  let cartItemsCounts = JSON.parse(localStorage.getItem('cartItems')) || {};
+    // ปรับปรุงจำนวนสินค้า
+    if (cartItems[itemId]) {
+      cartItems[itemId] += change;
 
-  // ปรับปรุงจำนวนสินค้า
-  if (cartItemsCounts[itemId]) {
-    cartItemsCounts[itemId] += change;
+      // ถ้าจำนวนสินค้าลดเหลือ 0 หรือต่ำกว่า 0 ให้แสดง Swal.fire เพื่อยืนยันการลบสินค้า
+      if (cartItems[itemId] <= 0) {
+        Swal.fire({
+          title: 'Remove Item?',
+          text: 'ต้องการลบสินค้านี้ไหม?',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonText: 'Yes, remove it!',
+          cancelButtonText: 'No, keep it'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            // ลบสินค้าออกจากตะกร้า
+            delete cartItems[itemId];
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
-    // ถ้าจำนวนสินค้าลดเหลือ 0
-    if (cartItemsCounts[itemId] <= 0) {
-      // แสดงข้อความยืนยันการลบสินค้า
-      Swal.fire({
-        title: 'Remove Item?',
-        text: 'This item has 0 quantity. Do you want to remove it from the cart?',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonText: 'Yes, remove it!',
-        cancelButtonText: 'No, keep it'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          delete cartItemsCounts[itemId];  // ลบสินค้าออกจากตะกร้า
-          localStorage.setItem('cartItems', JSON.stringify(cartItemsCounts));
+            // ลบการแสดงผลสินค้าจากหน้าเว็บ
+            const itemElement = document.getElementById(`quantity-${itemId}`);
+            if (itemElement) {
+              itemElement.closest('.card').remove();
+            }
 
-          // ลบการแสดงผลสินค้าจากหน้าเว็บ
-          const itemElement = document.getElementById(`quantity-${itemId}`).closest('.col-md-3');
-          if (itemElement) {
-            itemElement.remove();
+            // อัปเดตจำนวนสินค้าในตะกร้า (navbar)
+            updateCartCount();
+            // คำนวณใหม่และอัปเดตราคารวม
+            updateTotals();
+          } else {
+            // ถ้าไม่ลบสินค้า ให้คืนค่าเป็น 1
+            cartItems[itemId] = 1;
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+            // อัปเดตการแสดงผลจำนวนสินค้า
+            const quantityElement = document.getElementById(`quantity-${itemId}`);
+            if (quantityElement) {
+              quantityElement.textContent = cartItems[itemId];
+            }
+
+            // อัปเดตจำนวนสินค้าในตะกร้า
+            updateCartCount();
           }
-
-          // แสดงข้อความว่าสินค้าถูกลบ
-          Swal.fire({
-            title: 'Item Removed',
-            text: 'This item has been removed from your cart.',
-            icon: 'info',
-            confirmButtonText: 'OK'
-          });
-
-          // อัปเดตจำนวนสินค้าในตะกร้า (navbar)
-          updateCartCount();
-        } else {
-          // ถ้าไม่ลบสินค้า ให้คืนค่าเป็น 1
-          cartItemsCounts[itemId] = 1;
-          localStorage.setItem('cartItems', JSON.stringify(cartItemsCounts));
-
-          // อัปเดตการแสดงผลจำนวนสินค้า
-          const quantityElement = document.getElementById(`quantity-${itemId}`);
-          if (quantityElement) {
-            quantityElement.textContent = cartItemsCounts[itemId];
-          }
-
-          // อัปเดตจำนวนสินค้าในตะกร้า (navbar)
-          updateCartCount();
+        });
+      } else {
+        // อัปเดตการแสดงผลจำนวนสินค้า
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        const quantityElement = document.getElementById(`quantity-${itemId}`);
+        if (quantityElement) {
+          quantityElement.textContent = cartItems[itemId];
         }
-      });
-    } else {
-      localStorage.setItem('cartItems', JSON.stringify(cartItemsCounts));
 
-      // อัปเดตการแสดงผลจำนวนสินค้า
-      const quantityElement = document.getElementById(`quantity-${itemId}`);
-      if (quantityElement) {
-        quantityElement.textContent = cartItemsCounts[itemId];
+        // อัปเดตจำนวนสินค้าในตะกร้าและราคารวม
+        updateCartCount();
+        updateTotals();
       }
-
-      // อัปเดตจำนวนสินค้าในตะกร้า (navbar)
-      updateCartCount();
     }
-  } else if (change > 0) {
-    cartItemsCounts[itemId] = change;  // เพิ่มสินค้าใหม่ถ้ายังไม่มีในตะกร้า
-    localStorage.setItem('cartItems', JSON.stringify(cartItemsCounts));
-
-    // อัปเดตการแสดงผลจำนวนสินค้า
-    const quantityElement = document.getElementById(`quantity-${itemId}`);
-    if (quantityElement) {
-      quantityElement.textContent = cartItemsCounts[itemId];
-    }
-
-    // อัปเดตจำนวนสินค้าในตะกร้า (navbar)
-    updateCartCount();
   }
-}
 
-// ฟังก์ชันสำหรับลบสินค้ารายการเฉพาะ
-function removeItem(itemId) {
-  let cartItemsCounts = JSON.parse(localStorage.getItem('cartItems')) || {};
+  // ฟังก์ชันอัปเดตราคารวมและจำนวนสินค้าทั้งหมด
+  function updateTotals() {
+    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || {};
+    let totalPrice = 0;
+    let totalQuantity = 0;
 
-  // ลบสินค้าจาก localStorage
-  if (cartItemsCounts[itemId]) {
-    delete cartItemsCounts[itemId];
-    localStorage.setItem('cartItems', JSON.stringify(cartItemsCounts));
+    fetch('./json/products.json')
+      .then(response => response.json())
+      .then(data => {
+        data.forEach(product => {
+          if (product.id in cartItems) {
+            const itemQuantity = cartItems[product.id];
+            totalPrice += product.price * itemQuantity;
+            totalQuantity += itemQuantity;
+          }
+        });
 
-    // ลบการแสดงผลสินค้าจากหน้าเว็บ
-    const itemElement = document.getElementById(`quantity-${itemId}`).closest('.col-md-3');
-    if (itemElement) {
-      itemElement.remove();
+        // อัปเดตข้อมูลที่แสดง
+        document.getElementById('total-price').textContent = `฿${totalPrice}`;
+        document.getElementById('total-quantity').textContent = `สินค้าทั้งหมด: ${totalQuantity} ชิ้น`;
+      });
+  }
+
+  // ฟังก์ชันสำหรับอัปเดตจำนวนสินค้าในตะกร้า (จาก details.js)
+  function updateCartCount() {
+    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || {};
+    const totalItems = Object.values(cartItems).reduce((total, qty) => total + qty, 0);
+    document.querySelector('.cartcount').textContent = totalItems;
+  }
+
+  // เรียกใช้ฟังก์ชัน updateCartCount เมื่อโหลดหน้าเว็บ
+  document.addEventListener('DOMContentLoaded', updateCartCount);
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // ฟังก์ชันสำหรับแสดงวิธีการชำระเงินที่เลือก
+    function updatePaymentMethod() {
+        const selectedPaymentMethod = document.querySelector('input[name="payment"]:checked');
+        if (selectedPaymentMethod) {
+            const paymentText = selectedPaymentMethod.value; // ดึง value ของ input
+            document.getElementById('selected-payment-method').textContent = paymentText; // แสดงในฝั่งขวา
+        }
     }
 
-    // แสดงข้อความว่าสินค้าถูกลบ
-    Swal.fire({
-      title: 'Item Removed',
-      text: 'This item has been removed from your cart.',
-      icon: 'info',
-      confirmButtonText: 'OK'
+    // เรียกใช้ฟังก์ชันเมื่อมีการเปลี่ยนแปลงวิธีการชำระเงิน
+    document.querySelectorAll('input[name="payment"]').forEach(paymentOption => {
+        paymentOption.addEventListener('change', updatePaymentMethod);
     });
 
-    // อัปเดตจำนวนสินค้าในตะกร้า (navbar)
-    updateCartCount();
-  }
-}
+    // เรียกใช้ฟังก์ชันเพื่อแสดงผลวิธีการชำระเงินครั้งแรก
+    updatePaymentMethod();
+});
+
+document.getElementById('submit-order').addEventListener('click', function() {
+    // ดึงข้อมูลสินค้าในตะกร้าจาก localStorage
+    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || {};
+
+    // ตรวจสอบว่ามีสินค้าในตะกร้าหรือไม่
+    if (Object.keys(cartItems).length === 0) {
+        // ถ้าไม่มีสินค้าในตะกร้า ให้แสดง Swal.fire แจ้งเตือน
+        Swal.fire({
+            title: 'ไม่มีสินค้าในตะกร้า',
+            text: 'กรุณาเพิ่มสินค้าลงในตะกร้าก่อนทำการสั่งซื้อ',
+            icon: 'warning',
+            confirmButtonText: 'OK'
+        });
+    } else {
+        // ถ้ามีสินค้าในตะกร้า แสดงข้อความชำระเงินเรียบร้อย
+        Swal.fire({
+            title: 'การชำระเงินเรียบร้อยแล้ว',
+            text: 'ขอบคุณสำหรับการสั่งซื้อ!',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // ลบข้อมูลสินค้าในตะกร้าออกจาก localStorage
+                localStorage.removeItem('cartItems');
+                
+                // รีเฟรชหน้าเพื่ออัปเดตข้อมูล หรือเปลี่ยนไปยังหน้าขอบคุณ
+                location.reload(); // หรือเปลี่ยนไปหน้าอื่น เช่น window.location.href = "thankyou.html";
+            }
+        });
+    }
+});

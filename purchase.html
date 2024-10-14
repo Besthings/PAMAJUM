@@ -3,184 +3,319 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purchase Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/purchase.css">
-    <link rel="stylesheet" href="css/topnav.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/topnav.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="css/purchase.css">
     <link rel="stylesheet" type="text/css" href="css/Phone/phonenav.css">
     <link rel="stylesheet" type="text/css" href="css/Phone/P.css">
     <link rel="stylesheet" type="text/css" href="css/Phone/ipad.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.1.3/hamburgers.min.css">
 
 </head>
 <body>
-   <!-- top nav -->
-   <header id="header" style="background-color: transparent;">
-    <div class="container-me" >
-        <div class="left-container">
-            <div class="logo">
-                <a href="index.html"><h1>PAMAJUM</h1></a>
-            </div>
-
-            <!-- hamburger bar -->
-            <div class="hamburger hamburger--spin" id="menuToggle">
-                <div class="hamburger-box">
-                    <div class="hamburger-inner"></div>
+    <header id="header">
+        <div class="container-me" >
+            <div class="left-container">
+                <div class="logo">
+                    <a href="index.html"><h1>PAMAJUM</h1></a>
                 </div>
-            </div>
 
-            <ul class="navl" id="hamburger">
-                <li><a href="index.html" class="nav-link">HOME</a></li>
-                <li class="dropdown">
-                    <a href="products.html" class="dropdown-togglel">CATEGORY <i class="fa fa-chevron-down"></i></a>
-                    <ul class="dropdown-menul" id="dropdownMenul">
-                        <li><a href="products.html?type=keychain">keychain</a></li>
-                        <li><a href="products.html?type=doll">doll</a></li>
-                        <li><a href="products.html?type=figure">figure</a></li>
-                        <li><a href="products.html?type=other">other</a></li>
-                    </ul>
-                </li>
-                <li><a href="products.html" class="nav-link">PRODUCT</a></li>
-                <li><a href="contact.html" class="nav-link">CONTACT</a></li>
-                <li><a href="index.html#about" class="nav-link">ABOUT</a></li>
-            </ul>
+                <div class="hamburger hamburger--spin" id="menuToggle">
+                    <div class="hamburger-box">
+                        <div class="hamburger-inner"></div>
+                    </div>
+                </div>
 
-            
-        </div>
-
-        <div class="right-container">
-    
-            <div class="button">
-                <a href="#"><button class="sign">SIGN UP</button></a>
-                <a href="#"><button class="login">LOG IN</button></a>
-            </div>
-
-            <div class="dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownAvatar" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="img/user-login-avatar-11925.png" alt="Avatar" class="rounded-circle" width="38" height="38" style="margin-left: 1rem;">
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end animate slideIn" aria-labelledby="dropdownAvatar">
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                    <li><a class="dropdown-item" href="#">Settings</a></li>
-                    <li><a class="dropdown-item" href="#">Sign Up</a></li>
+                <ul class="navl" id="hamburger">
+                    <li><a href="index.html" class="nav-link">HOME</a></li>
+                    <li class="dropdown">
+                        <a href="products.html" class="dropdown-togglel">CATEGORY <i class="fa fa-chevron-down"></i></a>
+                        <ul class="dropdown-menul" id="dropdownMenul">
+                            <li><a href="products.html?type=keychain">keychain</a></li>
+                            <li><a href="products.html?type=doll">doll</a></li>
+                            <li><a href="products.html?type=figure">figure</a></li>
+                            <li><a href="products.html?type=other">other</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="products.html" class="nav-link">PRODUCT</a></li>
+                    <li><a href="contact.html" class="nav-link">CONTACT</a></li>
+                    <li><a href="index.html#about" class="nav-link">ABOUT</a></li>
                 </ul>
-            </div>
-              
-            
 
-            <div class="cart">
-                <a href="purchase.html"><img src="img/cart-963.png"  alt="cart"></a>
-                <div class="cartcount">
-                    <!-- 5 -->
+                
+            </div>
+
+            <div class="right-container">
+        
+                <div class="button">
+                    <a href="#"><button class="sign">SIGN UP</button></a>
+                    <a href="#"><button class="login">LOG IN</button></a>
                 </div>
+
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownAvatar" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="img/user-login-avatar-11925.png" alt="Avatar" class="rounded-circle" width="38" height="38" style="margin-left: 1rem;">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end animate slideIn" aria-labelledby="dropdownAvatar">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Sign Up</a></li>
+                    </ul>
+                </div>
+                  
+                
+
+                <div class="cart">
+                    <a href="cart.html"><img src="img/cart-963.png"  alt="cart"></a>
+                    <div class="cartcount">
+                        <!-- 5 -->
+                    </div>
+                </div>
+
             </div>
 
         </div>
+    </header>
+    <!-- Phone Toggle -->
+        <ul class="navl-toggle" id="hamburger-toggle">
+            <li><a href="index.html" class="nav-link">HOME</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-togglel">CATEGORY <i class="fa fa-chevron-down"></i></a>
+                <ul class="dropdown-menull" id="dropdownMenul">
+                    <a href="products.html?type=keychain">keychain</a>
+                    <a href="products.html?type=doll">doll</a>
+                    <a href="products.html?type=figure">figure</a>
+                    <a href="products.html?type=other">other</a>
+                </ul>
+            </li>
+            <li><a href="products.html" class="nav-link">PRODUCT</a></li>
+            <li><a href="contact.html" class="nav-link">CONTACT</a></li>
+            <li><a href="index.html#about" class="nav-link">ABOUT</a></li>
+</ul>
+    <!-- end top nav -->
+<div class="kumkwa-background">
+    <div class="kummod">
+        <div class="container-test">
+            <h2>Checkout Form</h2>
+        
+            <form action="/submit-order" method="POST">
+                <div class="section-test">
+                    <h3>ที่อยู่จัดส่งสินค้า</h3>
+        
+                    <!-- ชื่อ และ นามสกุล -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="ชื่อ">ชื่อ</label>
+                            <input type="text" id="ชื่อ" name="ชื่อ" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="นามสกุล">นามสกุล</label>
+                            <input type="text" id="นามสกุล" name="นามสกุล" required>
+                        </div>
+                    </div>
+        
+                    <!-- ที่อยู่: Line 1 และ Line 2 -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="address-line1">ที่อยู่</label>
+                            <input type="text" id="address-line1" name="address-line1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address-line2">ซอย</label>
+                            <input type="text" id="address-line2" name="address-line2">
+                        </div>
+                    </div>
+        
+                    <!-- ที่อยู่: Line 3 และ Line 4 -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="address-line3">ถนน</label>
+                            <input type="text" id="address-line3" name="address-line3">
+                        </div>
+                        <div class="form-group">
+                            <label for="address-line4">ตำบล</label>
+                            <input type="text" id="address-line4" name="address-line4">
+                        </div>
+                    </div>
+                
+                    <label for="phone">รหัสไปรษณีย์</label>
+                    <input type="tel" id="phone" name="phone" required>
+        
+                
+                    <label for="tax-id">หมายเลขประจำตัวผู้เสียภาษี</label>
+                    <input type="text" id="tax-id" name="tax-id">
+        
+                </div>
+        
+                <div class="section-test">
+                    <h3>วิธีการส่งสินค้า</h3>
+                    <div class="delivery-method">
+                        <input type="radio" id="standard" name="delivery" value="standard" checked>
+                        <label for="standard">฿50.00 จัดส่งปกติ - ระยะเวลาจัดส่ง กทม. 1-2 วันทำการ, ต่างจังหวัด 2-3 วันทำการ</label>
+                </div>
+        
+                <div class="section-test">
+                    <h3>วิธีการชำระเงิน</h3>
+                    <div class="payment-method">
+                        <div class="option-payment">
+                            <input type="radio" id="visa" name="payment" value="เครดิตการ์ด">
+                            <img src="img/visa.jpg" alt="visa" class="visa">
+                        </div>
+        
+                        <div class="option-payment">
+                            <input type="radio" id="paypal" name="payment" value="พร้อมเพย์">
+                            <img src="img/prompt.jpg" alt="PP" style="margin-left: 0.35rem;" class="pp">
+                        </div>
+        
+                        <div class="option-payment">
+                            <input type="radio" id="bank" name="payment" value="โอนเงินผ่านธนาคาร">
+                            <label for="cod">โอนเงินผ่านธนาคาร</label>
+                        </div>
+        
+                        <div class="option-payment">
+                            <input type="radio" id="cod" name="payment" value="ชำระเงินปลายทาง">
+                            <label for="cod">ชำระเงินปลายทาง</label>
+                        </div>
+                        
+                    </div>
+                </div>
+        
+            </form>
+        </div>
+    </div>  
 
+    <div class="order">
+        <h3>สรุปรายการสินค้า</h3>
+        <p id="total-quantity">สินค้าทั้งหมด: 0 ชิ้น</p>
+        <p id="no-items-message" style="display: none; color: rgb(247, 71, 71);">ไม่มีสินค้าตอนนี้</p> <!-- ข้อความที่จะแสดง -->
+        <div id="purchase-items"></div> 
+        <table style="margin-top: 2rem; margin-bottom: 0.5rem;"">
+            <tr>
+                <td>วิธีการชำระเงิน</td>
+                <td id="selected-payment-method" style="text-align: right;"></td> <!-- เพิ่มส่วนที่จะแสดงผล -->
+            </tr>
+            <tr style="border-top: 1px solid gray;">
+                <td><h5>ราคารวม</h5></td>
+                <td id="total-price" style="text-align: right;">฿0</td>
+            </tr>
+        </table>
+        <button type="submit" id="submit-order" class="submit-btn">สั่งซื้อสินค้า</button>
     </div>
-</header>
-<!-- Phone Toggle -->
-    <ul class="navl-toggle" id="hamburger-toggle">
-        <li><a href="index.html" class="nav-link">HOME</a></li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-togglel">CATEGORY <i class="fa fa-chevron-down"></i></a>
-            <ul class="dropdown-menull" id="dropdownMenul">
-                <a href="products.html?type=keychain">keychain</a>
-                <a href="products.html?type=doll">doll</a>
-                <a href="products.html?type=figure">figure</a>
-                <a href="products.html?type=other">other</a>
-            </ul>
-        </li>
-        <li><a href="products.html" class="nav-link">PRODUCT</a></li>
-        <li><a href="contact.html" class="nav-link">CONTACT</a></li>
-        <li><a href="index.html#about" class="nav-link">ABOUT</a></li>
-    </ul>
-<!-- end top nav -->
+</div>
 
 
-
-    <div class="container mt-5">
-        <h1>Your Cart Items</h1>
-        <div id="cart-items" class="row1">
-            <!-- Cart items will be loaded here -->
-        </div>
-        <!-- Button to clear the cart -->
-        <div class="buy-clear">
-            <button style="width: 250px; margin-top: 1rem;"  class="btn btn-warning mt-3" onclick="clearCart()">Clear Cart</button>
-            <button style="width: 250px; background-color: rgb(127, 238, 112); border: 1px solid greenyellow;" class="btn btn-warning mt-3"><a href="#" style="text-decoration: none; color: black;">Buy Now</a></button>
-        </div>
-    </div>    
+</div>
 
     <!-- footer -->
     <div class="size">
         <footer class="py-5">
             <div class="row">
-            <div class="col-6 col-md-2 mb-3">
-                <h5>Section</h5>
-                <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                </ul>
-            </div>
-        
-            <div class="col-6 col-md-2 mb-3">
-                <h5>Section</h5>
-                <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                </ul>
-            </div>
-        
-            <div class="col-6 col-md-2 mb-3">
-                <h5>Section</h5>
-                <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                </ul>
-            </div>
-        
-            <div class="col-md-5 offset-md-1 mb-3">
-                <form>
-                <h5>Subscribe to our newsletter</h5>
-                <p>Monthly digest of what's new and exciting from us.</p>
-                <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                    <label for="newsletter1" class="visually-hidden">Email address</label>
-                    <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                    <button class="btn btn-primary" type="button">Subscribe</button>
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Section</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                    </ul>
                 </div>
-                </form>
+
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Section</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Section</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-5 offset-md-1 mb-3">
+                    <form>
+                        <h5>Subscribe to our newsletter</h5>
+                        <p>Monthly digest of what's new and exciting from us.</p>
+                        <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                            <label for="newsletter1" class="visually-hidden">Email address</label>
+                            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            </div>
-        
+
             <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-            <p>© 2024 Company, Inc. All rights reserved.</p>
-            <ul class="list-unstyled d-flex">
-                <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-                <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-                <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
-            </ul>
+                <p>© 2023 Company, Inc. All rights reserved.</p>
+                <ul class="list-unstyled d-flex">
+                    <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="fa fa-instagram"></i></a></li>
+                </ul>
             </div>
         </footer>
     </div>
-     <!-- end footer -->
+    <!-- end footer -->
 
-    <!-- JS Script -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="js/purchase.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="js/dropdown.js"></script>
-    <script src="js/sticky-navbar.js"></script>
+    <!-- Modal -->
+    <div id="buy-modal" class="modal">
+        <div class="modal-content">
+          <span class="close" id="close-modal">&times;</span>
+          <h2 id="modal-product-name"></h2>
+          <p id="modal-product-description"></p>
+          <p>Price: <span id="modal-product-price"></span></p>
+          <p>Do you want to buy this item?</p>
+        <div class="container-yes-no">
+            <button onclick="addtocart()" id="confirm-buy" class="yes">Yes</button>
+            <button id="cancel-buy" class="no">No</button>
+        </div>
+        </div>
+      </div>
+    <!-- End modal -->
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Owl Carousel -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<!-- SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- AOS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+<!-- Custom Scripts -->
+<script src="js/dropdown.js" type="text/JavaScript"></script>
+<script src="js/sticky-navbar.js" type="text/JavaScript"></script>
+<script src="js/purchase.js" type="text/JavaScript"></script>
+<script src="js/owl-slideshow.js" type="text/JavaScript"></script>
+<script src="js/filter.js" type="text/JavaScript"></script>
+<script src="js/hamburger.js" type="text/JavaScript"></script>
+<script src="js/details.js" type="text/JavaScript"></script>
+
+<script>AOS.init({
+    once: true,
+});
+</script>
 
 </body>
 </html>
