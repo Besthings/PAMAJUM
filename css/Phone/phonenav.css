@@ -33,7 +33,7 @@
     }
 
     section{
-        margin-top: 3rem;
+        /* margin-top: 3rem; */
     }
 
     .hamburger{
@@ -105,7 +105,7 @@
 
 
     .dropdown-menu{
-        margin-top: 3rem !important;
+        /* margin-top: 3rem !important; */
     }
 
 
@@ -193,12 +193,12 @@
     }
 
     section{
-        margin-top: 8rem !important;
+        /* margin-top: 8rem !important; */
         /* border: 1px solid red; */
     }
 
     .dropdown-menu{
-        margin-top: 3rem !important;
+        /* margin-top: 3rem !important; */
     }
 
     .hamburger{
