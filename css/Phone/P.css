@@ -5,6 +5,11 @@
         background-position: none;
     }
 
+    section{
+        margin-top: 3rem !important;
+        /* border: 1px solid red; */
+    }
+
     .sec-container {
         width: 100%;
         flex-direction: column;
