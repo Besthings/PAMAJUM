@@ -47,6 +47,7 @@
 
     .about {
         margin-top: 2rem;
+        overflow-x: hidden !important;
     }
 
     .about-bg1, .about-bg3 {

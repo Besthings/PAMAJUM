@@ -42,6 +42,7 @@
 
     .about {
         margin-top: 2rem;
+        overflow-x: hidden !important;
     }
 
     .about-bg1, .about-bg3 {
@@ -95,12 +96,12 @@
     }
 
     .about-bg3 img{
-        width: 250px !important;
-        height: 250px !important;
+        width: 230px !important;
+        height: 230px !important;
         object-fit: cover;
         position: absolute;
         top: -1.5rem;
-        left: -2rem;
+        left: 0rem;
     }
 
     .about-bg3 .about-flex {

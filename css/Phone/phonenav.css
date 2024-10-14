@@ -179,6 +179,11 @@
         width: calc(100% - 2rem);
         
     }
+
+    .modal-content{
+        margin: 50% auto;
+    }
+
 }
 
 /* Ipad */
@@ -310,6 +315,10 @@
         right: 8px !important;
         font-size: 12px;
         /* border: 1px solid red; */
+    }
+
+    .modal-content{
+        margin: 40% auto;
     }
 
 }
