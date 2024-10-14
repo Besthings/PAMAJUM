@@ -6,6 +6,8 @@
     height: 912px;
     /* border: 1px solid transparent; */
     width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 section{
@@ -219,6 +221,8 @@ section{
     margin: 0 auto;
     padding: 1rem;
     /* border: 1px solid red; */
+    position: relative;
+    z-index: 2;
 }
 
 .about h1{
