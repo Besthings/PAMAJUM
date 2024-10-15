@@ -1,6 +1,11 @@
 /* General styles for smaller screens */
 @media (max-width: 767px) {
 
+    .more{
+        align-self: center;
+        width: 40%;
+    }
+
     .bg-img{
             height: 900px;
     }

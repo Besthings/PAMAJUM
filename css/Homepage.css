@@ -470,4 +470,30 @@ section{
     padding: 1rem;
     border-bottom: 2px solid gray;
     width: 100%;
+    
+}
+
+.more{
+    align-self: center;
+    width: 10%;
+}
+
+.more a{
+    border-radius: 1rem;
+    outline: 1px solid rgb(80, 80, 80);
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+    transition: 0.3s;
+    text-decoration: none;
+    padding: 0.5rem;
+    color: rgb(54, 54, 54);
+}
+
+.more a:hover{
+    background-color: rgb(255, 170, 91);
+    transition: 0.3s;
+    color: white;
+    outline: none;
 }
