@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/Homepage.css">
     <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="stylesheet" type="text/css" href="css/grid-product.css">
+    <link rel="stylesheet" type="text/css" href="css/loading.css">
     <link rel="stylesheet" type="text/css" href="css/Phone/phonenav.css">
     <link rel="stylesheet" type="text/css" href="css/Phone/P.css">
     <link rel="stylesheet" type="text/css" href="css/Phone/ipad.css">
@@ -20,6 +21,11 @@
  
 </head>
 <body>
+    <!-- Loading -->
+    <div id="opening">
+        <div id="opening-text">PAMAJUM</div>
+    </div>
+
     <div class="bg-img" >
         <!-- top nav -->
         <header id="header" style="background-color: transparent; box-shadow: none;">
@@ -122,9 +128,15 @@
         <!-- end 20% sale -->
     </div>
 
-    <div class="about" id="about" data-aos="fade-up" data-aos-delay="500">
+    <div class="owl-carousel owl-theme" id="slider1">
+        <img src="img/สีขาว สีสัน 3D น่ารัก สดใส โมเดิร์น Sale โปรโมชั่น ลดราคา Instagram โพสต์.png" alt="">
+        <img src="img/สีพาสเทล น่ารัก โปรโมชั่น 11.11 ส่วนลด Instagram Post (1366 x 768 px).png" alt="">
+        <img src="img/1.png" alt="">
+    </div>
+
+    <div class="about" id="about" data-aos="fade-up" data-aos-delay="800">
         <h1 data-aos="fade-up">ABOUT PAMAJUM</h1>
-        <div class="about-bg1" data-aos="fade-left" data-aos-delay="500">
+        <div class="about-bg1" data-aos="fade-left" data-aos-delay="800">
             <div class="about-flex">
                 <h2>What is blind box?</h2>
                 <p>"BLIND BOX" is a type of sealed packaging that keeps what's inside a mystery until you open it. If you order a "Set of 12 Boxes", you will receive a set of 12 figures in 12 different designs. Besides "basic" figures, some figures are rarer to find, which we call "SECRET".</p>
@@ -132,7 +144,7 @@
             <img src="img/mario.png" alt="" style="width: 500px; height: 500px; transform: translate(1rem, -2rem); filter: drop-shadow(13px 13px 5px gray);">
         </div>
 
-        <div class="about-bg2" data-aos="fade-right" data-aos-delay="500">
+        <div class="about-bg2" data-aos="fade-right" data-aos-delay="800">
             <img src="https://threedio-prod-var-cdn.icons8.com/yj/preview_sets/previews/aG2oKzBIGgISoEBm.webp" alt="" style="width: 600px; height: 600px; transform: translateY(-20rem); filter: drop-shadow(13px 13px 5px gray);">
             <div class="about-flex">
                 <h2>Why should you buy <br> Blind Boxes from our store?</h2>
@@ -140,7 +152,7 @@
             </div>
         </div>
 
-        <div class="about-bg3" data-aos="fade-left" data-aos-delay="500">
+        <div class="about-bg3" data-aos="fade-left" data-aos-delay="800">
             <div class="about-flex">
                 <h2>Will I receive 100% authentic products?</h2>
                 <p>"We guarantee that any item you order, whether it's a doll, keychain, figure, etc., will be 100% authentic. Plus, we offer free shipping when you cart a set of 6 or 12 items, and our blind boxes are carefully wrapped with high-quality bubble wrap.".</p>
@@ -152,9 +164,9 @@
     </div>
 
     <!-- category -->
-    <div class="category" data-aos="fade-up">
+    <div class="category" data-aos="fade-up" data-aos-delay="1000">
         <h1>CATEGORY</h1>
-        <div class="owl-carousel owl-theme">
+        <div class="catalog owl-carousel owl-theme">
             <div class="content">
                 <a href="products.html?type=keychain">
                     <img src="https://bizweb.dktcdn.net/100/435/335/products/13-d22132c7-16b6-4286-84e4-833be3529553.png?v=1721126810513" alt="keychain" style="width: 260px; height: 260px;">
@@ -184,7 +196,7 @@
     <!-- end category -->
 
     <!-- recommend -->
-    <div class="recommend" data-aos="fade-up" data-aos-delay="500">
+    <div class="recommend" data-aos="fade-up" data-aos-delay="1200">
         <h1>RECOMMEND</h1>
         <div id="grid-recommend" class="grid-recommend">
                 <!-- productrecommend.js -->
@@ -197,35 +209,35 @@
         <footer class="py-5">
             <div class="row">
             <div class="col-6 col-md-2 mb-3">
-                <h5>Section</h5>
+                <h5>Section 1</h5>
                 <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-body-secondary">Home</a></li>
+                <li class="nav-item mb-2"><a href="products.html" class="nav-link p-0 text-body-secondary">Category</a></li>
+                <li class="nav-item mb-2"><a href="products.html" class="nav-link p-0 text-body-secondary">Product</a></li>
+                <li class="nav-item mb-2"><a href="contact.html" class="nav-link p-0 text-body-secondary">Contact</a></li>
+                <li class="nav-item mb-2"><a href="index.html#about" class="nav-link p-0 text-body-secondary">About</a></li>
                 </ul>
             </div>
         
             <div class="col-6 col-md-2 mb-3">
-                <h5>Section</h5>
+                <h5>Section 2</h5>
                 <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQS</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Help</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Blog</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Contact us</a></li>
                 </ul>
             </div>
         
             <div class="col-6 col-md-2 mb-3">
-                <h5>Section</h5>
+                <h5>Section 3</h5>
                 <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Shop</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Download</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Research</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Educators</a></li>
                 </ul>
             </div>
         
@@ -290,6 +302,7 @@
 <script src="js/Home.js" type="text/JavaScript"></script>
 <script src="js/owl-slideshow.js" type="text/JavaScript"></script>
 <script src="js/hamburger.js" type="text/JavaScript"></script>
+<script src="js/loading.js" type="text/JavaScript"></script>
 <script>AOS.init({
     offset: 200,  // กำหนดค่า offset มากขึ้นเพื่อลดการแสดงผลเกินขอบ
     once: true,

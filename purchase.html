@@ -138,8 +138,86 @@
                     <!-- ที่อยู่: Line 3 และ Line 4 -->
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="address-line3">ถนน</label>
-                            <input type="text" id="address-line3" name="address-line3">
+                            <label for="address-line3">เลือกจังหวัด</label>
+                            <select>
+                                <option value="">-- เลือกจังหวัด --</option>
+                                <option value="bangkok">กรุงเทพมหานคร</option>
+                                <option value="amnat_charoen">อำนาจเจริญ</option>
+                                <option value="ang_thong">อ่างทอง</option>
+                                <option value="ayutthaya">พระนครศรีอยุธยา</option>
+                                <option value="buriram">บุรีรัมย์</option>
+                                <option value="chai_nat">ชัยนาท</option>
+                                <option value="chaiyaphum">ชัยภูมิ</option>
+                                <option value="chanthaburi">จันทบุรี</option>
+                                <option value="chiang_mai">เชียงใหม่</option>
+                                <option value="chiang_rai">เชียงราย</option>
+                                <option value="chachoengsao">ฉะเชิงเทรา</option>                                
+                                <option value="chonburi">ชลบุรี</option>
+                                <option value="chumphon">ชุมพร</option>
+                                <option value="kalasin">กาฬสินธุ์</option>
+                                <option value="kamphaeng_phet">กำแพงเพชร</option>
+                                <option value="kanchanaburi">กาญจนบุรี</option>
+                                <option value="khon_kaen">ขอนแก่น</option>
+                                <option value="krabi">กระบี่</option>
+                                <option value="lampang">ลำปาง</option>
+                                <option value="lamphun">ลำพูน</option>
+                                <option value="loei">เลย</option>
+                                <option value="lopburi">ลพบุรี</option>
+                                <option value="mae_hong_son">แม่ฮ่องสอน</option>
+                                <option value="mahasarakham">มหาสารคาม</option>
+                                <option value="mukdahan">มุกดาหาร</option>
+                                <option value="nakhon_nayok">นครนายก</option>
+                                <option value="nakhon_pathom">นครปฐม</option>
+                                <option value="nakhon_phanom">นครพนม</option>
+                                <option value="nakhon_ratchasima">นครราชสีมา</option>
+                                <option value="nakhon_sawan">นครสวรรค์</option>
+                                <option value="nakhon_si_thammarat">นครศรีธรรมราช</option>
+                                <option value="nan">น่าน</option>
+                                <option value="narathiwat">นราธิวาส</option>
+                                <option value="nong_bua_lamphu">หนองบัวลำภู</option>
+                                <option value="nong_khai">หนองคาย</option>
+                                <option value="nonthaburi">นนทบุรี</option>
+                                <option value="pathum_thani">ปทุมธานี</option>
+                                <option value="pattani">ปัตตานี</option>
+                                <option value="phang_nga">พังงา</option>
+                                <option value="phatthalung">พัทลุง</option>
+                                <option value="phayao">พะเยา</option>
+                                <option value="phetchabun">เพชรบูรณ์</option>
+                                <option value="phetchaburi">เพชรบุรี</option>
+                                <option value="phichit">พิจิตร</option>
+                                <option value="phitsanulok">พิษณุโลก</option>
+                                <option value="phrae">แพร่</option>
+                                <option value="phuket">ภูเก็ต</option>
+                                <option value="prachin_buri">ปราจีนบุรี</option>
+                                <option value="prachuap_khiri_khan">ประจวบคีรีขันธ์</option>
+                                <option value="ranong">ระนอง</option>
+                                <option value="ratchaburi">ราชบุรี</option>
+                                <option value="rayong">ระยอง</option>
+                                <option value="roi_et">ร้อยเอ็ด</option>
+                                <option value="sakonnakhon">สกลนคร</option>
+                                <option value="satun">สตูล</option>
+                                <option value="samut_prakan">สมุทรปราการ</option>
+                                <option value="samut_sakhon">สมุทรสาคร</option>
+                                <option value="samut_songkhram">สมุทรสงคราม</option>
+                                <option value="saraburi">สระบุรี</option>
+                                <option value="sa_kaeo">สระแก้ว</option>
+                                <option value="singburi">สิงห์บุรี</option>
+                                <option value="sisaket">ศรีสะเกษ</option>
+                                <option value="songkhla">สงขลา</option>
+                                <option value="sukhothai">สุโขทัย</option>
+                                <option value="suphanburi">สุพรรณบุรี</option>
+                                <option value="surat_thani">สุราษฎร์ธานี</option>
+                                <option value="surin">สุรินทร์</option>
+                                <option value="tak">ตาก</option>
+                                <option value="trang">ตรัง</option>
+                                <option value="trat">ตราด</option>
+                                <option value="ubon_ratchathani">อุบลราชธานี</option>
+                                <option value="udon_thani">อุดรธานี</option>
+                                <option value="uthai_thani">อุทัยธานี</option>
+                                <option value="uttaradit">อุตรดิตถ์</option>
+                                <option value="yala">ยะลา</option>
+                                <option value="yasothon">ยโสธร</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="address-line4">ตำบล</label>
@@ -219,63 +297,63 @@
     <div class="size">
         <footer class="py-5">
             <div class="row">
-                <div class="col-6 col-md-2 mb-3">
-                    <h5>Section</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-6 col-md-2 mb-3">
-                    <h5>Section</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-6 col-md-2 mb-3">
-                    <h5>Section</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-md-5 offset-md-1 mb-3">
-                    <form>
-                        <h5>Subscribe to our newsletter</h5>
-                        <p>Monthly digest of what's new and exciting from us.</p>
-                        <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                            <label for="newsletter1" class="visually-hidden">Email address</label>
-                            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                            <button class="btn btn-primary" type="button">Subscribe</button>
-                        </div>
-                    </form>
-                </div>
+            <div class="col-6 col-md-2 mb-3">
+                <h5>Section 1</h5>
+                <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="index.html" class="nav-link p-0 text-body-secondary">Home</a></li>
+                <li class="nav-item mb-2"><a href="products.html" class="nav-link p-0 text-body-secondary">Category</a></li>
+                <li class="nav-item mb-2"><a href="products.html" class="nav-link p-0 text-body-secondary">Product</a></li>
+                <li class="nav-item mb-2"><a href="contact.html" class="nav-link p-0 text-body-secondary">Contact</a></li>
+                <li class="nav-item mb-2"><a href="index.html#about" class="nav-link p-0 text-body-secondary">About</a></li>
+                </ul>
             </div>
-
+        
+            <div class="col-6 col-md-2 mb-3">
+                <h5>Section 2</h5>
+                <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQS</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Help</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Blog</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Contact us</a></li>
+                </ul>
+            </div>
+        
+            <div class="col-6 col-md-2 mb-3">
+                <h5>Section 3</h5>
+                <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Shop</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Download</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Research</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Educators</a></li>
+                </ul>
+            </div>
+        
+            <div class="col-md-5 offset-md-1 mb-3">
+                <form>
+                <h5>Subscribe to our newsletter</h5>
+                <p>Monthly digest of what's new and exciting from us.</p>
+                <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                    <label for="newsletter1" class="visually-hidden">Email address</label>
+                    <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                    <button class="btn btn-primary" type="button">Subscribe</button>
+                </div>
+                </form>
+            </div>
+            </div>
+        
             <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-                <p>© 2023 Company, Inc. All rights reserved.</p>
-                <ul class="list-unstyled d-flex">
-                    <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="fa fa-facebook"></i></a></li>
+            <p>© 2024 Company, Inc. All rights reserved.</p>
+            <ul class="list-unstyled d-flex">
+                <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="fa fa-facebook"></i></a></li>
                     <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="fa fa-twitter"></i></a></li>
                     <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="fa fa-instagram"></i></a></li>
-                </ul>
+            </ul>
             </div>
         </footer>
     </div>
-    <!-- end footer -->
+     <!-- end footer -->
 
     <!-- Modal -->
     <div id="buy-modal" class="modal">
@@ -311,7 +389,7 @@
 <script src="js/filter.js" type="text/JavaScript"></script>
 <script src="js/hamburger.js" type="text/JavaScript"></script>
 <script src="js/details.js" type="text/JavaScript"></script>
-
+<script src="js/loading.js" type="text/JavaScript"></script>
 <script>AOS.init({
     once: true,
 });

@@ -195,7 +195,7 @@ document.getElementById('submit-order').addEventListener('click', function() {
                 localStorage.removeItem('cartItems');
                 
                 // รีเฟรชหน้าเพื่ออัปเดตข้อมูล หรือเปลี่ยนไปยังหน้าขอบคุณ
-                location.reload(); // หรือเปลี่ยนไปหน้าอื่น เช่น window.location.href = "thankyou.html";
+                window.location.href = "index.html"; // เปลี่ยนไปยังหน้า index
             }
         });
     }

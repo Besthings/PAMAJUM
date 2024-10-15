@@ -2,8 +2,8 @@
     background: url('https://Besthings.github.io/PAMAJUM/img/v1064-36.jpg');
     background-size: cover;
     background-attachment: fixed;
-    background-position: 0 -14rem;
-    height: 912px;
+    background-position: 0rem;
+    height: 1100px;
     /* border: 1px solid transparent; */
     width: 100%;
     position: relative;
@@ -11,11 +11,20 @@
     margin-bottom: 2rem;
 }
 
+
 section{
     display: flex;
     flex-direction: column;
     height: 100%;
     /* border: 1px solid red; */
+}
+
+#slider1{
+    filter: drop-shadow(0 0 15px gray);
+    width: 70%;
+    align-self: center;
+    transition: 0.5s;
+    object-fit: cover;
 }
 
 .sec-container{
@@ -238,7 +247,7 @@ section{
     max-width: 1380px;
     width: 100%;
     margin: 0 auto;
-    margin-top: 5rem;
+    margin-top: 2rem;
 }
 
 .about-bg1 ,.about-bg2 ,.about-bg3{

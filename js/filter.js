@@ -1,9 +1,11 @@
-let products = []; // เก็บสินค้าทั้งหมด
+AOS.init({
+  duration: 1000,
+  once: true
+});
 
-window.onload = function() {
-  // เรียกใช้ filterProducts('all') เพื่อทำให้ปุ่ม All เป็น active เมื่อหน้าโหลด
-  filterProducts('all');
-};
+let products = []; // เก็บสินค้าทั้งหมด
+let currentType = 'all'; // เก็บประเภทสินค้าปัจจุบัน
+let maxPrice = 1000; // กำหนดราคาเริ่มต้นสูงสุด
 
 // โหลดสินค้าจากไฟล์ JSON
 fetch('./json/products.json')
@@ -18,28 +20,48 @@ fetch('./json/products.json')
 function displayProducts(items) {
   const container = document.getElementById('grid-recommend');
   container.innerHTML = ''; // ล้างสินค้าก่อนแสดงใหม่
+
+  let delay = 0; // ตัวแปรเก็บค่าหน่วงเวลาเริ่มต้น
+
   items.forEach(item => {
-    const menuItem = document.createElement('div');
-    menuItem.classList.add('menu-item');
+    if (item.price <= maxPrice) { // กรองตามราคาสูงสุดที่เลือก
+      const menuItem = document.createElement('div');
+      menuItem.classList.add('menu-item');
+      menuItem.setAttribute('data-aos', 'zoom-out'); // ตั้งค่า AOS
+      menuItem.setAttribute('data-aos-delay', delay); // เพิ่มค่าหน่วงเวลา
 
-    menuItem.innerHTML = `
-      <div class="box">
-        <a href="details.html?id=${item.id}">
-          <img src="${item.image}" alt="${item.name}">
-          <h3>${item.name}</h3>
-          <p>${item.description01}</p>
-          <span>฿${item.price}</span>
-        </a>
-        <button onclick="openModal(${item.id})" class="buy">Buy</button>
-      </div>
-    `;
+      menuItem.innerHTML = `
+        <div class="box">
+          <a href="details.html?id=${item.id}">
+            <img src="${item.image}" alt="${item.name}">
+            <h3>${item.name}</h3>
+            <p>${item.description01}</p>
+            <span>฿${item.price}</span>
+          </a>
+          <button onclick="openModal(${item.id})" class="buy">Buy</button>
+        </div>
+      `;
 
-    container.appendChild(menuItem);
+      container.appendChild(menuItem);
+      delay += 100; // เพิ่มค่าหน่วงเวลา 100 มิลลิวินาทีในแต่ละสินค้า
+    }
   });
+
+  // รีเฟรช AOS หลังจากเพิ่มสินค้าลงใน DOM แล้ว
+  AOS.refresh();
+}
+
+// ฟังก์ชันกรองราคาตาม slider
+function updatePriceRange(value) {
+  maxPrice = value; // อัปเดตราคาสูงสุดที่เลือก
+  document.getElementById('max-price').textContent = value; // อัปเดตการแสดงผลราคา
+  filterProducts(currentType); // กรองสินค้าตามประเภทและช่วงราคาใหม่
 }
 
 // ฟังก์ชันกรองสินค้าตามประเภท
 function filterProducts(type) {
+  currentType = type; // อัปเดตประเภทที่เลือก
+
   // ลบคลาส active จากปุ่มทั้งหมด
   const buttons = document.querySelectorAll('#filter-buttons button');
   buttons.forEach(button => button.classList.remove('active'));
@@ -51,12 +73,11 @@ function filterProducts(type) {
   }
 
   // กรองสินค้าและแสดงผล
-  if (type === 'all') {
-    displayProducts(products); // แสดงสินค้าทั้งหมด
-  } else {
-    const filteredProducts = products.filter(item => item.type === type);
-    displayProducts(filteredProducts); // แสดงสินค้าเฉพาะประเภทที่เลือก
-  }
+  const filteredProducts = (type === 'all') 
+    ? products 
+    : products.filter(item => item.type === type);
+
+  displayProducts(filteredProducts); // แสดงสินค้าเฉพาะประเภทที่เลือกและในช่วงราคา
 }
 
 // ฟังก์ชันที่ใช้ในการอ่านประเภทจาก URL และกรองสินค้า
@@ -69,7 +90,6 @@ function loadProductsFromURL() {
 
 // เรียกใช้ฟังก์ชันเมื่อโหลดหน้า
 window.onload = loadProductsFromURL;
-
 
 // ฟังก์ชันค้นหาสินค้าตามชื่อ (แบบเรียลไทม์)
 function searchProducts(event) {
