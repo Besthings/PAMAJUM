@@ -1,5 +1,5 @@
 /* General styles for smaller screens */
-@media (max-width: 767px) {
+@media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1) {
 
     .more{
         align-self: center;
@@ -474,7 +474,7 @@
 }
 
 /* Styles for very small screens (e.g., phones in portrait mode) */
-@media (max-width: 400px) {
+@media (max-width: 400px) and (-webkit-min-device-pixel-ratio: 1) {
 
     .grid-recommend{
         row-gap: 20px;

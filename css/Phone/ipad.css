@@ -1,5 +1,5 @@
 /* Combined Media Queries for iPad and similar devices */
-@media (min-width: 768px) and (max-width: 1100px) {
+@media (min-width: 768px) and (max-width: 1100px) and (-webkit-min-device-pixel-ratio: 1) {
 
     .more{
         align-self: center;
@@ -474,7 +474,7 @@
     }
 }
 
-@media (min-width: 900px) and (max-width: 1024px){
+@media (min-width: 900px) and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
     .box {
         max-width: 250px;
         width: 100%;
