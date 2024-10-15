@@ -58,6 +58,7 @@
         width: 480px;
         height: 240px;
         font-size: 4rem; /* Display the text */
+        color: rgb(230, 230, 230);
         -webkit-text-stroke: 2px #ff976d;
         background: #fafafa;
         box-shadow: 40px 40px 40px #cccccc,
