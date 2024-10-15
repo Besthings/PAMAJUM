@@ -32,9 +32,6 @@
         align-items: center;
     }
 
-    section{
-        /* margin-top: 3rem; */
-    }
 
     .hamburger{
         display: inline-block !important;
@@ -103,10 +100,6 @@
         border-radius: 0.2rem;
     }
 
-
-    .dropdown-menu{
-        /* margin-top: 3rem !important; */
-    }
 
 
     .dropdown-togglel {
@@ -191,10 +184,6 @@
 @media (min-width: 768px) and (max-width: 1200px) and (-webkit-min-device-pixel-ratio: 1) {
     .navl{
         display: none   ;
-    }
-
-    .dropdown-menu{
-        /* margin-top: 3rem !important; */
     }
 
     .hamburger{
@@ -317,4 +306,11 @@
         margin: 40% auto;
     }
 
+}
+
+@supports (-webkit-touch-callout: none) {
+    /* Styles for iOS devices */
+    .dropdown-menu{
+        margin-top: 3rem !important;
+    }
 }
