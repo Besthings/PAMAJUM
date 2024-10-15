@@ -48,7 +48,7 @@
         flex-direction: row;
         padding: 0 1rem;
         justify-content: space-between;
-        /* margin-bottom: 2rem; */
+        margin-bottom: 2rem;
         
     }
 
@@ -197,6 +197,8 @@
         flex-direction: row;
         padding: 0 1rem;
         justify-content: space-between;
+        margin-bottom: 2rem;
+
     }
 
     /* แสดงปุ่ม hamburger */
