@@ -2,7 +2,7 @@
 @media (max-width: 767px) {
 
     .bg-img{
-        background-position: none;
+        background-position: -10rem;
     }
 
     section{

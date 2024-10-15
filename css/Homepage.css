@@ -8,6 +8,7 @@
     width: 100%;
     position: relative;
     z-index: 1;
+    margin-bottom: 2rem;
 }
 
 section{
@@ -18,7 +19,8 @@ section{
 }
 
 .sec-container{
-    width: 1600px;
+    max-width: 1600px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
