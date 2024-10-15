@@ -106,25 +106,7 @@ function changeQuantity(itemId, change) {
         cancelButtonText: 'No, keep it'
       }).then((result) => {
         if (result.isConfirmed) {
-          delete cartItemsCounts[itemId];  // ลบสินค้าออกจากตะกร้า
-          localStorage.setItem('cartItems', JSON.stringify(cartItemsCounts));
-
-          // ลบการแสดงผลสินค้าจากหน้าเว็บ
-          const itemElement = document.getElementById(`quantity-${itemId}`);
-          if (itemElement) {
-            itemElement.remove();
-          }
-
-          // แสดงข้อความว่าสินค้าถูกลบ
-          Swal.fire({
-            title: 'Item Removed',
-            text: 'This item has been removed from your cart.',
-            icon: 'info',
-            confirmButtonText: 'OK'
-          });
-
-          // อัปเดตจำนวนสินค้าในตะกร้า (navbar)
-          updateCartCount();
+          removeItem(itemId);
         } else {
           // ถ้าไม่ลบสินค้า ให้คืนค่าเป็น 1
           cartItemsCounts[itemId] = 1;
@@ -152,18 +134,6 @@ function changeQuantity(itemId, change) {
       // อัปเดตจำนวนสินค้าในตะกร้า (navbar)
       updateCartCount();
     }
-  } else if (change > 0) {
-    cartItemsCounts[itemId] = change;  // เพิ่มสินค้าใหม่ถ้ายังไม่มีในตะกร้า
-    localStorage.setItem('cartItems', JSON.stringify(cartItemsCounts));
-
-    // อัปเดตการแสดงผลจำนวนสินค้า
-    const quantityElement = document.getElementById(`quantity-${itemId}`);
-    if (quantityElement) {
-      quantityElement.textContent = cartItemsCounts[itemId];
-    }
-
-    // อัปเดตจำนวนสินค้าในตะกร้า (navbar)
-    updateCartCount();
   }
 }
 
@@ -179,7 +149,7 @@ function removeItem(itemId) {
     // ลบการแสดงผลสินค้าจากหน้าเว็บ
     const itemElement = document.getElementById(`quantity-${itemId}`);
     if (itemElement) {
-      itemElement.remove();
+      itemElement.closest('.card').remove();  // ลบ div ทั้งหมดของการ์ดที่แสดงสินค้านั้น
     }
 
     // แสดงข้อความว่าสินค้าถูกลบ

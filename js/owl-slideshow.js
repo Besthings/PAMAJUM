@@ -11,6 +11,9 @@ $(document).ready(function(){
                 items: 2 // แสดง 2 item
             },
             1000: {
+                items: 3 // แสดง 3 item
+            },
+            1400: {
                 items: 4 // แสดง 3 item
             }
         }
