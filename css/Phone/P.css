@@ -10,11 +10,6 @@
             height: 900px;
     }
 
-    section{
-        margin-top: 3rem !important;
-        /* border: 1px solid red; */
-    }
-
     #slider1{
         width: 90%;
     }
@@ -598,5 +593,18 @@
     .section-test input[type="tel"], 
     .section-test select{
         margin-bottom: 0;
+    }
+}
+
+
+@supports (-webkit-touch-callout: none) {
+    /* Styles for iOS devices */
+    .dropdown-menu{
+        margin-top: 3rem !important;
+    }
+
+    section{
+        margin-top: 3rem !important;
+        /* border: 1px solid red; */
     }
 }
